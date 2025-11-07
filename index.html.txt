@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyTutor - Learn Python with AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🐍 PyTutor</h1>
+    <button id="darkModeToggle">🌗</button>
+  </header>
+
+  <main>
+    <section id="editorSection">
+      <h2>Code Editor</h2>
+      <textarea id="codeInput" placeholder="Write your Python code here..."></textarea>
+      <button id="runBtn">▶ Run Code</button>
+      <pre id="output"></pre>
+    </section>
+
+    <section id="aiSection">
+      <h2>AI Tutor</h2>
+      <div id="aiChat"></div>
+      <input type="text" id="aiInput" placeholder="Ask PyTutor for help..." />
+      <button id="askBtn">Ask</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by AI | PyTutor T.G. Mofokeng © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
