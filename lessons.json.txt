@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Variables and Print Statements",
+    "description": "Write a program that prints your name and age.",
+    "expected_output": "My name is Alex and I am 25 years old."
+  },
+  {
+    "id": 2,
+    "title": "Loops and Lists",
+    "description": "Create a list of 5 fruits and print them using a for loop.",
+    "expected_output": "apple\nbanana\ncherry\norange\ngrape"
+  }
+]
