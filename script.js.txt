@@ -1,0 +1,33 @@
+const backendURL = "https://your-backend-url.onrender.com"; // Replace with your Render URL
+
+document.getElementById("runBtn").onclick = async () => {
+  const code = document.getElementById("codeInput").value;
+  const output = document.getElementById("output");
+  output.textContent = "Running code...";
+  const res = await fetch(`${backendURL}/run`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ code })
+  });
+  const data = await res.json();
+  output.textContent = data.output || data.error;
+};
+
+document.getElementById("askBtn").onclick = async () => {
+  const userQuestion = document.getElementById("aiInput").value;
+  const code = document.getElementById("codeInput").value;
+  const aiChat = document.getElementById("aiChat");
+  aiChat.innerHTML += `<p><b>You:</b> ${userQuestion}</p>`;
+  const res = await fetch(`${backendURL}/ai-help`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: userQuestion, code })
+  });
+  const data = await res.json();
+  aiChat.innerHTML += `<p><b>PyTutor:</b> ${data.reply}</p>`;
+  document.getElementById("aiInput").value = "";
+};
+
+document.getElementById("darkModeToggle").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
